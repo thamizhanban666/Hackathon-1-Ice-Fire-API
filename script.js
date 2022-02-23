@@ -67,7 +67,7 @@ parentDiv.appendChild(div7);
    .then((arrobj) => {
       arrobj.map((e, i) => { 
          let cDiv = document.createElement("div");
-         cDiv.classList.add("row","border","border-primary","mx-1","my-2");
+         cDiv.classList.add("row","border","border-primary","bg-light","mx-1","my-2");
          childDiv.appendChild(cDiv)
 
          let d1 = document.createElement("div");
