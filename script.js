@@ -109,7 +109,7 @@ parentDiv.appendChild(div7);
          cDiv.appendChild(d6);
 
          let d7 = document.createElement("button");
-         d7.classList.add("col-1", "fw-bold","px-auto", "my-auto", "fs-6","btn","btn-sm");
+         d7.classList.add("col-1", "fw-bold","px-auto", "my-auto", "fs-6","btn","btn-sm","btn-outline-success");
          d7.setAttribute("style", "width:4rem");
          d7.setAttribute("data-bs-toggle","modal")
          d7.setAttribute("data-bs-target","#cModal")
