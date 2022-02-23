@@ -1,18 +1,23 @@
 const myFetchall = async () => {
-  let response = await fetch(
-    `https://www.anapioficeandfire.com/api/books?pageSize=50`
-  );
-  return await response.json();
+   try {
+      let response = await fetch(
+         `https://www.anapioficeandfire.com/api/books?pageSize=50`
+      );
+      return await response.json();
+   }
+   catch (err) {
+      console.log(err)
+   }
 };
 
-const myFetchChar = async (c) => {     //console.log(`${c}`);
-  let response = await fetch(c)
-  return await response.json();
-};
+// const myFetchChar = async (c) => {     
+//   let response = await fetch(c)
+//   return await response.json();
+// };
 
 let showCharacter = (c) => {
-   let mBody = document.getElementById("modal-body");
-   mBody.innerText = c.join(" ")
+let mBody = document.getElementById("modal-body");
+mBody.innerText = c.join(" ")
 }
 
 let parentDiv = document.createElement("div");
@@ -20,7 +25,7 @@ parentDiv.classList.add("row","text-center","mx-2","my-2","text-light","bg-prima
 document.body.appendChild(parentDiv);
 
 let childDiv = document.createElement("div");
-childDiv.classList.add("row","text-center","x-2","my-2","text-dark");
+childDiv.classList.add("row","text-center","mx-2","my-2","text-dark");
 document.body.appendChild(childDiv)
 
 let div1 = document.createElement("div");
@@ -67,7 +72,7 @@ parentDiv.appendChild(div7);
    .then((arrobj) => {
       arrobj.map((e, i) => { 
          let cDiv = document.createElement("div");
-         cDiv.classList.add("row","border","border-primary","bg-light","mx-1","my-2");
+         cDiv.classList.add("row","border","border-primary","bg-light","mx-1","my-2","table", "table-hover");
          childDiv.appendChild(cDiv)
 
          let d1 = document.createElement("div");
