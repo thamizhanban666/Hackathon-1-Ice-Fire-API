@@ -21,7 +21,7 @@ mBody.innerText = c.join(" ")
 }
 
 let parentDiv = document.createElement("div");
-parentDiv.classList.add("row","text-center","mx-2","my-2","text-light","bg-primary");
+parentDiv.classList.add("row","text-center","mx-2","my-2","text-light","bg-primary","p-div");
 document.body.appendChild(parentDiv);
 
 let childDiv = document.createElement("div");
@@ -72,7 +72,7 @@ parentDiv.appendChild(div7);
    .then((arrobj) => {
       arrobj.map((e, i) => { 
          let cDiv = document.createElement("div");
-         cDiv.classList.add("row","border","border-primary","bg-light","mx-1","my-2","table", "table-hover");
+         cDiv.classList.add("row","border","border-primary","bg-light","mx-1","my-2","div-hover");
          childDiv.appendChild(cDiv)
 
          let d1 = document.createElement("div");
@@ -86,8 +86,9 @@ parentDiv.appendChild(div7);
          cDiv.appendChild(d2);
 
          let d8 = document.createElement("div");
-         d8.classList.add("col-1", "fw-bold","my-1", "fs-6");
+         d8.classList.add("col-1", "fw-bold","my-1", "fs-6","img");
          let img = document.createElement("img");
+         img.classList.add()
          img.setAttribute("src", `./img${i+1}.jpg`);
          img.setAttribute("style","width:100%")
          d8.appendChild(img);
@@ -114,7 +115,7 @@ parentDiv.appendChild(div7);
          cDiv.appendChild(d6);
 
          let d7 = document.createElement("button");
-         d7.classList.add("col-1", "fw-bold","px-auto", "my-auto", "fs-6","btn","btn-sm","btn-outline-success");
+         d7.classList.add("col-1", "fw-bold","px-auto", "my-auto", "fs-6","btn","btn-sm","btn-outline-success","show-btn");
          d7.setAttribute("style", "width:4rem");
          d7.setAttribute("data-bs-toggle","modal")
          d7.setAttribute("data-bs-target","#cModal")
