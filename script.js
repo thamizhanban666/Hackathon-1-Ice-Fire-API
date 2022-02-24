@@ -40,10 +40,6 @@ let showCharacter = (c) => {
       mBody.innerHTML = nameArr.join(`<br>`);
    }, 1000);
 
-   // let print = async () => {
-   //    mBody.innerHTML = nameArr.join(`<br>`);
-   // }
-   // print();
 }
 
 
@@ -111,7 +107,7 @@ myFetchall()
 
           let c23Div1 = document.createElement("div");
          c23Div1.classList.add("p-1", "text-center");
-         c23Div1.innerHTML = `<span class="my-color">Released On :  </span>${e.released.slice(0,10)}`
+         c23Div1.innerHTML = `<span class="my-color">Released On :  </span>${e.released.slice(0,10).split("-").reverse().join("-")}`
          c2Div3.appendChild(c23Div1);
 
          let c23Div2 = document.createElement("div");
