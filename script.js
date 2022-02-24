@@ -21,22 +21,22 @@ const myFetchChar = async (c) => {
 };
 
 let showCharacter = (c) => {
-   let mBody = document.getElementById("modal-body");   
+   let mBody = document.getElementById("modal-body");
    let nameArr = [];
    let i = 0;
-   c.map((e) => {     
-      let n = e.slice(49);
+   for (let j = 0; j < 200;j++){
+   let n = c[j].slice(49);
       if (typeof (+n) === "number") {
-         myFetchChar(`https://www.anapioficeandfire.com/api/characters/${n}`)
-            .then((charObj) => {
-               let name = charObj.name;
-               if (name.length > 0) {
-                  i++;
-                  nameArr.push(`${i} . ${name}`);
-               }
-            })
-      }
-   })
+      myFetchChar(`https://www.anapioficeandfire.com/api/characters/${n}`)
+         .then((charObj) => {
+            let name = charObj.name;
+            if (name.length > 0) {
+               i++;
+               nameArr.push(`${i} . ${name}`);
+            }
+         })
+   }
+}
 
    setTimeout(() => {
       mBody.innerHTML = nameArr.join(`<br>`);
