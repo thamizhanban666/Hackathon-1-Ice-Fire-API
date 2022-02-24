@@ -1,4 +1,4 @@
-const myFetchall = async () => {
+const myFetchAll = async () => {
    try {
       let response = await fetch(
          `https://www.anapioficeandfire.com/api/books?pageSize=50`
@@ -43,7 +43,7 @@ let showCharacter = (c) => {
 }
 
 
-myFetchall()
+myFetchAll()
    .then((arrobj) => {
       arrobj.map((e, i) => {
 

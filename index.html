@@ -12,13 +12,16 @@
 <body>
 
 <!-- Nav -->  
-<nav class="navbar navbar-light bg-nav position-sticky top-2 my-2 mx-2">
+<nav class="navbar navbar-light bg-nav mx-2 my-2">
   <div class="container-fluid">
       <a class="navbar-brand text-light">ICE AND FIRE BOOKS</a>
-      <div class="d-flex flex-nowrap ">
-        <input id="searchBar" class="rounded-pill me-2 ps-2 pe-2 border border-light " type="search" placeholder="Search" aria-label="Search" onchange="onchange()">
-        <button id="searchBtn" class="btn btn-outline-success border border-light text-light my-btn" type="submit" >Search</button>
-        <div id="searchWikiBtn" class="ms-2  btn btn-outline-light flex-fill  my-btn">wiki</div>
+      <div class="d-flex flex-wrap justify-content-center">
+        <input id="searchBar" class="rounded-pill border border-light px-2" type="search" placeholder="Search" aria-label="Search" onchange="onchange()">
+        <div class="text-center">
+          <button id="searchBtn" class="btn btn-outline-success border border-light text-light my-btn mx-2" type="submit" >Search</button>
+          <button id="searchWikiBtn" class=" btn btn-outline-light my-btn mx-2">wiki
+          </button>
+        </div>
       </div>
   </div>
 </nav>
