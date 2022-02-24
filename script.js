@@ -62,7 +62,7 @@ myFetchAll()
          parentDiv.appendChild(childDiv2);
 
          let img = document.createElement("img");
-         img.classList.add("w-75","rounded-3");
+         img.classList.add("img-size","rounded-3");
          img.setAttribute("src", `./assets/img${i+1}.jpg`);
          childDiv1.appendChild(img);
 

@@ -30,7 +30,13 @@
 
 }
 
-.p-div {
-   border-radius: 0.5em;
-   border-color: blue;
+.img-size {
+   width: 75%;
+}
+
+@media screen and (min-width:200px) and (max-width:575px) {
+   .img-size {
+      width: 50%;
+   }
+
 }
