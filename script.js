@@ -6,18 +6,18 @@ const myFetchall = async () => {
       return await response.json();
    }
    catch (err) {
-      console.log(error)
+      console.log(err)
    }
 };
 
 const myFetchChar = async (c) => {  
    try {
-      let response = await fetch(c)
-      return await response.json();
+  let response = await fetch(c)
+       return await response.json();
    }
-   catch (error) {
-      console.log(error)
-   }
+   catch (err) {
+      console.log(err)
+   };
 };
 
 let showCharacter = (c) => {
@@ -31,7 +31,7 @@ let showCharacter = (c) => {
             let name = charObj.name;
             if (name.length > 0) {
                i++;
-               nameArr.push(`${i}.  ${name}`);
+               nameArr.push(`${i} . ${name}`);
             }
          })
    })
@@ -40,116 +40,98 @@ let showCharacter = (c) => {
       mBody.innerHTML = nameArr.join(`<br>`);
    }, 1000);
 
-
+   // let print = async () => {
+   //    mBody.innerHTML = nameArr.join(`<br>`);
+   // }
+   // print();
 }
 
-let parentDiv = document.createElement("div");
-parentDiv.classList.add("row","text-center","mx-2","my-2","text-light","bg-primary","p-div");
-document.body.appendChild(parentDiv);
-
-let childDiv = document.createElement("div");
-childDiv.classList.add("row","text-center","mx-2","my-2","text-dark");
-document.body.appendChild(childDiv)
-
-let div1 = document.createElement("div");
-div1.classList.add("col-1","fw-bold","border","border-light","py-4","fs-4")
-div1.innerText = "S.No";
-parentDiv.appendChild(div1);
-
-let div2 = document.createElement("div");
-div2.classList.add("col-2","fw-bold","border","border-light","py-4","fs-5")
-div2.innerText = "NAME";
-parentDiv.appendChild(div2);
-
-let divimg = document.createElement("div");
-divimg.classList.add("col-1","fw-bold","border","border-light","py-4","fs-5")
-divimg.innerText = "Img";
-parentDiv.appendChild(divimg);
-
-let div3 = document.createElement("div");
-div3.classList.add("col-2","fw-bold","border","border-light","py-4","fs-5")
-div3.innerText = "ISBN";
-parentDiv.appendChild(div3);
-
-let div4 = document.createElement("div");
-div4.classList.add("col-1","fw-bold","border","border-light","py-3","fs-5")
-div4.innerText = "NO. OF PAGES";
-parentDiv.appendChild(div4);
-
-let div5 = document.createElement("div");
-div5.classList.add("col-2","fw-bold","border","border-light","py-4","fs-5")
-div5.innerText = "AUTHORS";
-parentDiv.appendChild(div5);
-
-let div6 = document.createElement("div");
-div6.classList.add("col-2","fw-bold","border","border-light","py-3","fs-5")
-div6.innerHTML = "PUBLISHER & RELEASED DATE";
-parentDiv.appendChild(div6);
-
-let div7 = document.createElement("div");
-div7.classList.add("col-1","fw-bold","border","border-light","py-4","px-0","fs-6")
-div7.innerText = "CHARACTERS";
-parentDiv.appendChild(div7);
 
 myFetchall()
-.then((arrobj) => {
-   arrobj.map((e, i) => { 
-      let cDiv = document.createElement("div");
-      cDiv.classList.add("row","border","border-primary","bg-light","mx-1","my-2","div-hover");
-      childDiv.appendChild(cDiv)
+   .then((arrobj) => {
+      arrobj.map((e, i) => {
 
-      let d1 = document.createElement("div");
-      d1.classList.add("col-1", "fw-bold", "my-auto", "fs-5");
-      d1.innerText = i+1;
-      cDiv.appendChild(d1);
+         let parentDiv = document.createElement("div");
+         parentDiv.classList.add("row","my-3", "mx-3", "bg-c");
+         document.body.appendChild(parentDiv);
 
-      let d2 = document.createElement("div");
-      d2.classList.add("col-2", "fw-bold", "my-auto", "fs-6");
-      d2.innerText = e.name;
-      cDiv.appendChild(d2);
+         let childDiv1 = document.createElement("div");
+         childDiv1.classList.add("col-xs-10", "col-sm-4", "col-md-3", "col-lg-2", "col-xl-2", "p-2", "text-center","img");
+         parentDiv.appendChild(childDiv1);
+   
+         let childDiv2 = document.createElement("div");
+         childDiv2.classList.add("col-xs-12", "col-sm-8", "col-md-9", "col-lg-10", "col-xl-10");
+         parentDiv.appendChild(childDiv2);
 
-      let dimg = document.createElement("div");
-      dimg.classList.add("col-1", "fw-bold","my-1", "fs-6","img");
-      let img = document.createElement("img");
-      img.classList.add()
-      img.setAttribute("src", `./img${i+1}.jpg`);
-      img.setAttribute("style","width:100%")
-      dimg.appendChild(img);
-      cDiv.appendChild(dimg);
+         let img = document.createElement("img");
+         img.classList.add("w-75","rounded-3");
+         img.setAttribute("src", `./assets/img${i+1}.jpg`);
+         childDiv1.appendChild(img);
 
-      let d3 = document.createElement("div");
-      d3.classList.add("col-2", "fw-bold", "my-auto", "fs-6");
-      d3.innerText = e.isbn;
-      cDiv.appendChild(d3);
+         let c2ParentDiv = document.createElement("div");
+         c2ParentDiv.classList.add("row");
+         childDiv2.appendChild(c2ParentDiv);
 
-      let d4 = document.createElement("div");
-      d4.classList.add("col-1", "fw-bold", "my-auto", "fs-6");
-      d4.innerText = e.numberOfPages;
-      cDiv.appendChild(d4);
+         let c2Div1 = document.createElement("div");
+         c2Div1.classList.add("col-12","d-flex","justify-content-around");
+         c2ParentDiv.appendChild(c2Div1);
 
-      let d5 = document.createElement("div");
-      d5.classList.add("col-2", "fw-bold", "my-auto", "fs-6");
-      d5.innerText = e.authors;
-      cDiv.appendChild(d5);
+         let c2Div2 = document.createElement("div");
+         c2Div2.classList.add("col-sm-12", "col-md-6", "col-lg-6", "col-xl-6");
+         c2ParentDiv.appendChild(c2Div2);
+         
+         let c2Div3 = document.createElement("div");
+         c2Div3.classList.add("col-sm-12", "col-md-6", "col-lg-6", "col-xl-6");
+         c2ParentDiv.appendChild(c2Div3);
 
-      let d6 = document.createElement("div");
-      d6.classList.add("col-2", "fw-bold", "my-auto", "fs-6");
-      d6.innerHTML = `${e.publisher} <br> ${e.released.slice(0,10)}`
-      cDiv.appendChild(d6);
+         let c21Div1 = document.createElement("div");
+         c21Div1.classList.add( "p-1");
+         c21Div1.innerHTML = `<span class="fs-4 my-color fw-bold">${e.name}</span>`
+         c2Div1.appendChild(c21Div1);
+        
+         let c21Div2 = document.createElement("div");
+         c21Div2.classList.add( "p-1");
+         c21Div2.innerHTML = `<span class="my-color">Published By :  </span>${e.publisher}`
+         c2Div1.appendChild(c21Div2);
+            
+         let c22Div1 = document.createElement("div");
+         c22Div1.classList.add("p-1", "text-center");
+         c22Div1.innerHTML = `<span class="my-color">Author :  </span>${e.authors}`
+         c2Div2.appendChild(c22Div1);
 
-      let d7 = document.createElement("button");
-      d7.classList.add("col-1", "fw-bold","px-auto","mx-auto", "my-auto", "fs-6","btn","btn-sm","btn-outline-success","show-btn");
-      d7.setAttribute("style", "width:4rem");
-      d7.setAttribute("data-bs-toggle","modal")
-      d7.setAttribute("data-bs-target","#cModal")
-      d7.innerText = "show"         
-      cDiv.appendChild(d7);
+         let c22Div2 = document.createElement("div");
+         c22Div2.classList.add("p-1", "text-center");
+         c22Div2.innerHTML = `<span class="my-color">No of Pages :  </span>${e.numberOfPages}`
+         c2Div2.appendChild(c22Div2);
+         
+         let c22Div3 = document.createElement("div");
+         c22Div3.classList.add("p-1", "text-center");
+         c22Div3.innerHTML = `<span class="my-color">ISBN No :  </span>${e.isbn}`
+         c2Div2.appendChild(c22Div3);
 
-      d7.addEventListener("click", () => {
+          let c23Div1 = document.createElement("div");
+         c23Div1.classList.add("p-1", "text-center");
+         c23Div1.innerHTML = `<span class="my-color">Released On :  </span>${e.released.slice(0,10)}`
+         c2Div3.appendChild(c23Div1);
+
+         let c23Div2 = document.createElement("div");
+         c23Div2.classList.add("py-3", "text-center");
+         c2Div3.appendChild(c23Div2);
+            
+         let showBtn = document.createElement("button");
+         showBtn.classList.add("p-1", "btn", "btn-outline-success", "my-btn");
+         showBtn.setAttribute("data-bs-toggle","modal")
+         showBtn.setAttribute("data-bs-target","#cModal")
+         showBtn.innerHTML = `<span class="fw-bold">Show Characters</span>`
+         c23Div2.appendChild(showBtn);
+
+         showBtn.addEventListener("click", () => {
          showCharacter(e.characters)
       })
-   })      
-})
+         
+      })
+   })
+
 
 let searchBar = document.getElementById("searchBar");
 let searchBtn = document.getElementById("searchBtn");

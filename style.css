@@ -1,9 +1,27 @@
-.show-btn:hover {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+   font-size: x-large;
+   font-weight: 800 !important;
+   font-family: 'Poppins',
+      sans-serif;
+}
+
+.my-btn:hover {
    zoom: 110%;
 }
 
 .img:hover {
-   zoom: 120%;
+   zoom: 5%;
+   }
+
+   .my-color {
+      color: rgb(48, 4, 105);
+   }
+
+   .bg-nav {
+      background-color: rgb(90, 36, 160);
+      border-radius: 1em;
 }
 
 .bg-c {
