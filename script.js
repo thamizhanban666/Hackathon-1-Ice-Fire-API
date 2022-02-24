@@ -26,14 +26,16 @@ let showCharacter = (c) => {
    let i = 0;
    c.map((e) => {     
       let n = e.slice(49);
-      myFetchChar(`https://www.anapioficeandfire.com/api/characters/${n}`)
-         .then((charObj) => {
-            let name = charObj.name;
-            if (name.length > 0) {
-               i++;
-               nameArr.push(`${i} . ${name}`);
-            }
-         })
+      if (typeof (+n) === "number") {
+         myFetchChar(`https://www.anapioficeandfire.com/api/characters/${n}`)
+            .then((charObj) => {
+               let name = charObj.name;
+               if (name.length > 0) {
+                  i++;
+                  nameArr.push(`${i} . ${name}`);
+               }
+            })
+      }
    })
 
    setTimeout(() => {
@@ -69,7 +71,7 @@ myFetchAll()
          childDiv2.appendChild(c2ParentDiv);
 
          let c2Div1 = document.createElement("div");
-         c2Div1.classList.add("col-12","d-flex","justify-content-around");
+         c2Div1.classList.add("col-12","d-flex","flex-wrap","justify-content-around");
          c2ParentDiv.appendChild(c2Div1);
 
          let c2Div2 = document.createElement("div");
