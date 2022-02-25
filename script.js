@@ -37,7 +37,7 @@ let showCharacter = (c) => {
 
    setTimeout(() => {
       if (nameArr.length == 0) {
-         mBody.innerHTML = "Characters are not defined in the API / <br>The API doesn't fetch the characters"
+         mBody.innerHTML = "Characters are not defined in the API / <br>The Request didn't get the Response properly from the API"
       }
       else {
           mBody.innerHTML = nameArr.join(`<br>`);
