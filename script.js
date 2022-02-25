@@ -24,10 +24,8 @@ let showCharacter = (c) => {
    let mBody = document.getElementById("modal-body");
    let nameArr = [];
    let i = 0;
-   for (let j = 0; j < 200;j++){
-   let n = c[j].slice(49);
-      if (typeof (+n) === "number") {
-      myFetchChar(`https://www.anapioficeandfire.com/api/characters/${n}`)
+   for (let j = 0; j < c.length; j++){
+      myFetchChar(c[j])
          .then((charObj) => {
             let name = charObj.name;
             if (name.length > 0) {
@@ -36,12 +34,15 @@ let showCharacter = (c) => {
             }
          })
    }
-}
 
    setTimeout(() => {
-      mBody.innerHTML = nameArr.join(`<br>`);
+      if (nameArr.length == 0) {
+         mBody.innerHTML = "Characters are not defined in the API / <br>The API doesn't fetch the characters"
+      }
+      else {
+          mBody.innerHTML = nameArr.join(`<br>`);
+      }
    }, 1000);
-
 }
 
 
