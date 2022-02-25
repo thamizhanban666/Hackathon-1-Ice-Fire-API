@@ -7,6 +7,10 @@
       sans-serif;
 }
 
+.font-s {
+   font-size: 30px;
+}
+
 .my-btn:hover {
    zoom: 110%;
 }
@@ -34,9 +38,31 @@
    width: 75%;
 }
 
-@media screen and (min-width:200px) and (max-width:575px) {
+.my-width {}
+
+@media screen and (min-width:100px) and (max-width:575px) {
    .img-size {
       width: 50%;
    }
 
+}
+@media screen and (min-width:100px) and (max-width:340px) {
+   .font-s {
+      font-size: 20px;
+   }
+
+}
+
+@media screen and (min-width:100px) and (max-width:365px) {
+   .my-width {
+      width: 100%;
+   }
+
+}
+
+@media screen and (min-width:100px) and (max-width:623px) {
+   .my-btn {
+      margin-top: 5%;
+      margin-bottom: 5%;
+   }
 }
